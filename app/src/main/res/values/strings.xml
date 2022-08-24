@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GitTrends</string>
+    <string name="toolbar_title">Trending</string>
+</resources>
