@@ -4,4 +4,9 @@
     <string name="results_error">Loading Error</string>
     <string name="retry">Retry</string>
     <string name="no_results_found">No Result</string>
+    <string name="search">Search</string>
+    <string name="search_query">%s</string>
+    <string name="query">language:%s</string>
+    <string name="something_went_wrong"><b>Something went wrong</b>
+        An alien is probably blocking your signal</string>
 </resources>

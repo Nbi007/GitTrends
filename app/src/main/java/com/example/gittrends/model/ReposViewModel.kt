@@ -1,4 +1,4 @@
-package com.example.gittrends.view
+package com.example.gittrends.model
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
@@ -8,7 +8,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.example.gittrends.data.GithubRepository
 
-class ReposViewModel @ViewModelInject constructor (
+class  ReposViewModel @ViewModelInject constructor (
     private val repository: GithubRepository
 ) : ViewModel() {
 
