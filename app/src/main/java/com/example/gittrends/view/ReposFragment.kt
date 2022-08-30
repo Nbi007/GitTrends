@@ -21,7 +21,6 @@ import com.example.gittrends.databinding.FragmentReposBinding
 import com.example.gittrends.model.Languages
 import com.example.gittrends.model.ReposViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_repos.*
 import java.util.*
 
 @AndroidEntryPoint
@@ -41,7 +40,6 @@ class ReposFragment : Fragment(R.layout.fragment_repos) {
         super.onViewCreated(view, savedInstanceState)
 
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
-
         _binding = FragmentReposBinding.bind(view)
         val adapter = ReposAdapter()
         binding.apply {
@@ -63,10 +61,13 @@ class ReposFragment : Fragment(R.layout.fragment_repos) {
             btnRetry.setOnClickListener {
                 adapter.retry()
             }
+
         }
 
         viewModel.repos.observe(viewLifecycleOwner) {
             adapter.submitData(viewLifecycleOwner.lifecycle, it)
+
+
         }
 
         adapter.addLoadStateListener { loadState ->
@@ -76,16 +77,17 @@ class ReposFragment : Fragment(R.layout.fragment_repos) {
                 btnRetry.isVisible = loadState.source.refresh is LoadState.Error               // retryAimation.isVisible = loadState.source.refresh is LoadState.Error
                 error.isVisible = loadState.source.refresh is LoadState.Error
                 emptyTv.isVisible = loadState.source.refresh is LoadState.Error
-
+                skeletonLayout.isVisible =loadState.source.refresh is LoadState.Loading
+                if (loadState.source.refresh is LoadState.Error==true){
+                    skeletonLayout.isVisible =false
+                }
                 // no results found
                 if (loadState.source.refresh is LoadState.NotLoading &&
                     loadState.append.endOfPaginationReached &&
                     adapter.itemCount < 1
                 ) {
                     recycler.isVisible = false
-                    //emptyTv.isVisible = true
                 } else {
-                   // emptyTv.isVisible = false
                 }
             }
         }

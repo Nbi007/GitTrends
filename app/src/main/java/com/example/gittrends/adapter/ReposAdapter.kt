@@ -44,10 +44,6 @@ class ReposAdapter: PagingDataAdapter<Repo, ReposAdapter.ViewHolder>(REPO_COMPAR
     }
     private fun createOnClickListener(binding : ItemTrendingLayoutBinding, repo: Repo): View.OnClickListener {
         return View.OnClickListener {
-      /*      val directions = ReposFragmentDirections.actionReposToDetails(repo)
-            val extras = FragmentNavigatorExtras(
-                binding.avatar to "avatar_${repo.id}")
-            it.findNavController().navigate(directions, extras)*/
         }
     }
     class ViewHolder(val binding: ItemTrendingLayoutBinding) :

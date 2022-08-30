@@ -29,20 +29,6 @@
             app:layout_constraintBottom_toTopOf="@+id/btnRetry"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-        <!--   <com.airbnb.lottie.LottieAnimationView
-               android:id="@+id/error"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_marginLeft="0dp"
-               android:layout_marginTop="1dp"
-               android:visibility="visible"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent"
-               app:layout_constraintBottom_toBottomOf="parent"
-               app:lottie_autoPlay="false"
-               app:lottie_loop="false"
-               app:lottie_rawRes="@raw/loty_retry_json"/>-->
         <TextView
             android:id="@+id/emptyTv"
             android:layout_width="wrap_content"
@@ -68,6 +54,12 @@
             android:layout_marginTop="40dp"
             android:visibility="visible" />
 
+        <aglibs.loading.skeleton.layout.SkeletonRecyclerView
+            android:id="@+id/skeletonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:autoStart="true"
+            app:skeletonViewHolderItem="@layout/item_skeleton_view" />
 
     </RelativeLayout>
 </layout>
