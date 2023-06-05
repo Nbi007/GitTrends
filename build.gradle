@@ -6,7 +6,9 @@ buildscript {
         maven { url 'https://jitpack.io' }
 
     }
-
+    ext {
+        compose_version = '1.5.0-beta01'
+    }
 }
 plugins {
     id 'com.android.application' version '7.1.2' apply false

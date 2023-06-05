@@ -30,4 +30,6 @@ https://github.com/Nbi007/GitTrends.git
 - [Retrofit2 & OkHttp3](https://github.com/square/retrofit) - construct the REST APIs and paging network data.
 - [Material-Components](https://github.com/material-components/material-components-android) - Material design components like ripple animation, cardView.
 - [Skeleton and Shimmer] 'com.github.AgnaldoNP:AGSkeletonLoading:1.2'
-
+# Showcases
+- Local unit testing
+- Api layer testing with mock web server
